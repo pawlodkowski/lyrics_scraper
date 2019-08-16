@@ -111,3 +111,6 @@ venv.bak/
 
 *.pyc
 test.csv
+
+lyrics_scraper/__pycache__/*
+lyrics_scraper/spiders/__pycache__/*
