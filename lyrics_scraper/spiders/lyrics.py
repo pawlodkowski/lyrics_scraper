@@ -14,7 +14,7 @@ class LyricsSpider(scrapy.Spider):
 
         lyricstext = ' '.join(lyricstext)
         lyricstext = re.sub('\n|\r|\t|\\|\,|\'|\"|\,|\*', '', lyricstext)
-        lyricstext = re.sub('\-|\:|\)|\(|\[|\]|\{|\}', ' ', lyricstext)
+        lyricstext = re.sub('\-|\:|\)|\(|\[|\]|\{|\}|\.|\!', ' ', lyricstext)
         lyricstext = re.sub('\s+', " ", lyricstext)
         return lyricstext
 
@@ -34,7 +34,8 @@ class LyricsSpider(scrapy.Spider):
 
         title = response.xpath('//div[@class="banner-heading"]/h1/text()').get()
         # text = response.xpath('//div[@id="lyrics-body-text"]//text()').getall()
-        text = response.xpath('//div[@class="lyrics-body"]//p[@class="verse"]/text()').getall()
+        text = response.xpath('//div[@class="lyrics-body"]//p[@class="verse"]\
+        /text()').getall()
         text = self.clean(text)
 
         item['song'] = title
