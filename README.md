@@ -19,3 +19,7 @@ Example project using Scrapy to extract lyrics of top artists from metrolyrics.c
 
 ## Still to-do:
 - add middleware to use proxy IPs / different user agents.
+
+## Author
+
+Paul Wlodkowski
